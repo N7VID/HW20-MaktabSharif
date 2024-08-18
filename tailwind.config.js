@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         "hero-homepage": "url('/public/hero-homepage.jpg')",
       },
+      fontFamily: {
+        yekan: ["yekan", "serif"],
+      },
     },
   },
   plugins: [],

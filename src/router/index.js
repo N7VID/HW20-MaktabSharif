@@ -4,10 +4,12 @@ import ContactsEditPage from "../pages/contacts-edit-page/ContactsEditPage";
 import ContactsPage from "../pages/contacts-page/ContactsPage";
 import HomePage from "../pages/home-page/HomePage";
 import Login from "../pages/login-page/Login";
+import SignUp from "../pages/signup-page/SignUp";
 
 export const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/login", element: <Login /> },
+  { path: "/signup", element: <SignUp /> },
   {
     path: "/contacts",
     element: <Outlet />,

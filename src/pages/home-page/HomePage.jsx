@@ -15,7 +15,9 @@ export default function HomePage() {
           همه چیز در یک جا، همیشه در دسترس.
         </p>
         <div className="flex gap-5 justify-around px-32">
-          <Button variant={"outline"}>ثبت نام</Button>
+          <Button variant={"outline"} onClick={() => navigate("signup")}>
+            ثبت نام
+          </Button>
           <Button variant={"solid"} onClick={() => navigate("/login")}>
             ورود
           </Button>

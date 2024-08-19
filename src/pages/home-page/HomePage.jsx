@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center items-center h-screen bg-hero-homepage bg-center bg-cover cursor-default font-yekan">
       <div className="flex flex-col gap-14">
@@ -14,7 +16,9 @@ export default function HomePage() {
         </p>
         <div className="flex gap-5 justify-around px-32">
           <Button variant={"outline"}>ثبت نام</Button>
-          <Button variant={"solid"}>ورود</Button>
+          <Button variant={"solid"} onClick={() => navigate("/login")}>
+            ورود
+          </Button>
         </div>
       </div>
     </div>

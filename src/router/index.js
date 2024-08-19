@@ -3,9 +3,11 @@ import ContactsAddPage from "../pages/contacts-add-page/ContactsAddPage";
 import ContactsEditPage from "../pages/contacts-edit-page/ContactsEditPage";
 import ContactsPage from "../pages/contacts-page/ContactsPage";
 import HomePage from "../pages/home-page/HomePage";
+import Login from "../pages/login-page/Login";
 
 export const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
+  { path: "/login", element: <Login /> },
   {
     path: "/contacts",
     element: <Outlet />,

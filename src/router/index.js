@@ -8,7 +8,14 @@ import SignUp from "../pages/signup-page/SignUp";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import ContactsSinglePage from "../pages/contacts-single-page/ContactsSinglePage";
+import Header from "../components/Header/Header";
 
+const ContactLayout = () => (
+  <>
+    <Header />
+    <Outlet />
+  </>
+);
 export const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   {
@@ -29,7 +36,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/contacts",
-    element: <Outlet />,
+    element: <ContactLayout />,
     children: [
       {
         index: true,
@@ -40,7 +47,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/contacts/:id",
+        path: ":id",
         element: (
           <PrivateRoute>
             <ContactsSinglePage />
@@ -48,7 +55,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/contacts/edit/:id",
+        path: "edit/:id",
         element: (
           <PrivateRoute>
             <ContactsEditPage />
@@ -56,7 +63,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/contacts/add",
+        path: "add",
         element: (
           <PrivateRoute>
             <ContactsAddPage />

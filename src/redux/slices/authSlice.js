@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import httpRequest from "../../services/http-request";
 
 const initialState = {
-  user: null,
+  user: localStorage.getItem("user") || null,
   token: localStorage.getItem("accessToken") || null,
   loading: false,
   error: null,
@@ -46,6 +46,7 @@ const authSlice = createSlice({
         state.error = null;
         state.user = action.payload.user;
         localStorage.setItem("accessToken", action.payload.accessToken);
+        localStorage.setItem("user", JSON.stringify(action.payload.user));
       })
       .addCase(signUp.rejected, (state, action) => {
         state.loading = false;
@@ -62,6 +63,7 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.accessToken;
         localStorage.setItem("accessToken", action.payload.accessToken);
+        localStorage.setItem("user", JSON.stringify(action.payload.user));
       })
       .addCase(login.rejected, (state, action) => {
         state.loading = false;

@@ -1,20 +1,25 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/input/Input";
 import Button from "../../components/Button/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./schema";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/slices/authSlice";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({ resolver: yupResolver(schema) });
 
   const handleSubmitForm = (value) => {
-    console.log(value);
+    dispatch(login(value));
+    navigate("/contacts");
   };
   return (
     <div className="flex justify-center items-center h-screen p-10 desktop:p-0 font-yekan">

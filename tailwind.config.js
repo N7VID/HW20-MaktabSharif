@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "hero-homepage": "url('/public/hero-homepage.jpg')",
+        "hero-homepage-1": "url('/public/hero-homepage-1.jpg')",
         "hero-texture": "url('/public/blue-texture.jpg')",
         "hero-signIn": "url('/public/hero-sign-in.jpg')",
         "hero-main-2": "url('/public/hero-main-2.jpg')",

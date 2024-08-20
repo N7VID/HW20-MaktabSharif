@@ -14,19 +14,19 @@ export default function ContactsSinglePage() {
   }, [dispatch, id]);
 
   return (
-    <div className="bg-hero-texture min-h-screen bg-center bg-no-repeat bg-cover flex flex-col items-center font-yekan">
-      <Header>اطلاعات مخاطب</Header>
-
-      <div className="relative flex-grow flex-col glassCard flex justify-center items-center my-[60px] w-[430px]">
-        <Link to={"/contacts"}>
-          <img
-            src="/back.svg"
-            className="w-10 absolute top-10 left-8"
-            alt="back-icon"
-          />
-        </Link>
-        <div className="w-[375px] mb-10">
+    <div className="bg-hero-main-2 min-h-screen bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center font-yekan cursor-default">
+      <Header />
+      <div className="flex-grow flex-col glassCard flex justify-center gap-8 items-center my-[40px] w-[430px]">
+        <h1 className="text-xl font-bold">اطلاعات مخاطب</h1>
+        <div className="w-[375px] relative">
           <img src={user?.imgSrc} alt="user-image" className="rounded-lg" />
+          <Link to={"/contacts"}>
+            <img
+              src="/back.svg"
+              className="w-10 absolute top-1 left-1"
+              alt="back-icon"
+            />
+          </Link>
         </div>
         <div className="flex flex-col gap-2 text-lg">
           <div className="flex gap-4 bg-white py-2 px-6 rounded-md justify-between w-[380px]">

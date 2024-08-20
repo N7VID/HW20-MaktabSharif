@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Contact({ contact }) {
   return (
@@ -35,11 +36,13 @@ export default function Contact({ contact }) {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
-        <img
-          src="/eye-open-2.svg"
-          alt="eye-icon"
-          className="w-8 bg-white hover:bg-[#B2E4FA] transition duration-300 p-[6px] rounded-md cursor-pointer"
-        />
+        <Link to={`/contacts/${contact.id}`}>
+          <img
+            src="/eye-open-2.svg"
+            alt="eye-icon"
+            className="w-8 bg-white hover:bg-[#B2E4FA] transition duration-300 p-[6px] rounded-md cursor-pointer"
+          />
+        </Link>
         <img
           src="/edit.svg"
           alt="edit-icon"

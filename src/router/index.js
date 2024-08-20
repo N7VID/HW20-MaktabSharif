@@ -7,6 +7,7 @@ import Login from "../pages/login-page/Login";
 import SignUp from "../pages/signup-page/SignUp";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import ContactsSinglePage from "../pages/contacts-single-page/ContactsSinglePage";
 
 export const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
@@ -35,6 +36,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ContactsPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/contacts/:id",
+        element: (
+          <PrivateRoute>
+            <ContactsSinglePage />
           </PrivateRoute>
         ),
       },

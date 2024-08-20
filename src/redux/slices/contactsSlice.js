@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import httpRequest from "../../services/http-request";
-import { BASE_URL, CONTACTS_URL } from "../../constant";
+import { CONTACTS_URL } from "../../constant";
 
 const initialState = {
   error: null,

@@ -3,7 +3,7 @@ import httpRequest from "../../services/http-request";
 
 const initialState = {
   user: null,
-  token: null,
+  token: localStorage.getItem("accessToken") || null,
   loading: false,
   error: null,
 };

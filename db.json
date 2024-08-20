@@ -1,13 +1,21 @@
 {
-    "contacts":[
-        {
-            "id":1,
-            "fullName":"مائده رضایی",
-            "imgSrc":"https://img.freepik.com/free-photo/blond-business-woman-suit-using-tablet_23-2148095680.jpg?t=st=1723936023~exp=1723939623~hmac=ad89f650297a17dbfe6c59ee142088c1469ced755e442339f80d2192384d60fe&w=996",
-            "phoneNumber":"09121212121",
-            "email":"rezai@gmail.com",
-            "job":"منابع انسانی",
-            "relative":"همکار"
-        }
-    ]
+  "users": [
+    {
+      "email": "navidaliakbari.206@gmail.com",
+      "password": "$2a$10$yTzKRTzN2l/8as0NDN8OMeH2IdMtoGCA6Z2soGiWm2VWuGs3a60YO",
+      "fullName": "نوید علی اکبری",
+      "id": 1
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "fullName": "مائده رضایی",
+      "imgSrc": "https://img.freepik.com/free-photo/blond-business-woman-suit-using-tablet_23-2148095680.jpg?t=st=1723936023~exp=1723939623~hmac=ad89f650297a17dbfe6c59ee142088c1469ced755e442339f80d2192384d60fe&w=996",
+      "phoneNumber": "09121212121",
+      "email": "rezai@gmail.com",
+      "job": "منابع انسانی",
+      "relative": "همکار"
+    }
+  ]
 }

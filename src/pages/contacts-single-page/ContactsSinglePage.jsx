@@ -14,8 +14,7 @@ export default function ContactsSinglePage() {
   }, [dispatch, id]);
 
   return (
-    <div className="bg-hero-main-2 min-h-screen bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center font-yekan cursor-default">
-      <Header />
+    <div className="bg-hero-main-2 min-h-[calc(100vh-60px)] bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center font-yekan cursor-default">
       <div className="flex-grow flex-col glassCard flex justify-center gap-8 items-center my-[40px] w-[430px]">
         <h1 className="text-xl font-bold">اطلاعات مخاطب</h1>
         <div className="w-[375px] relative">

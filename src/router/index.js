@@ -22,7 +22,6 @@ const ContactLayout = () => (
       draggable
       theme={"light"}
       transition={Slide}
-      limit={1}
     />
     <Outlet />
   </>

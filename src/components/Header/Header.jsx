@@ -17,7 +17,7 @@ export default function Header({ children }) {
       </Link>
       <h2 className="text-xl font-bold">{children}</h2>
       <div className="flex items-center justify-center gap-3">
-        <p className="font-semibold">{user.fullName}</p>
+        <p className="font-semibold">{user?.fullName}</p>
         <img
           src="/logout.svg"
           alt="logout-icon"

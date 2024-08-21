@@ -9,6 +9,14 @@
   }
 }
 
+:root {
+  --toastify-font-family: "Yekan", sans-serif;
+}
+
+.Toastify__toast-body {
+  font-family: var(--toastify-font-family);
+}
+
 .glassCard {
   background: #ffffff7c;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

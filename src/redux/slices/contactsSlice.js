@@ -22,10 +22,22 @@ export const getContacts = createAsyncThunk(
 );
 
 export const getSingleContact = createAsyncThunk(
-  "getSingle/contacts",
+  "contacts/getSingle",
   async (id, { rejectWithValue }) => {
     try {
       const response = await httpRequest.get(`${CONTACTS_URL}/${id}`);
+      return response.data;
+    } catch (error) {
+      rejectWithValue(error.data.message);
+    }
+  }
+);
+
+export const postContact = createAsyncThunk(
+  "contacts/post",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await httpRequest.post(`${CONTACTS_URL}`, data);
       return response.data;
     } catch (error) {
       rejectWithValue(error.data.message);
@@ -62,6 +74,10 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       });
+
+    builder.addCase(postContact.fulfilled, (state, action) => {
+      state.users[0].push(action.payload);
+    });
   },
 });
 

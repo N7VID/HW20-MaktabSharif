@@ -6,7 +6,7 @@ export const schema = yup.object({
     .required("نام کامل خود را وارد نمایید!")
     .min(6, "حداقل شش کاراکتر وارد نمایید!"),
 
-  imgAddress: yup.string().required("درج آدرس تصویر الزامی می باشد!"),
+  imgSrc: yup.string().required("درج آدرس تصویر الزامی می باشد!"),
   phoneNumber: yup
     .string()
     .required("وارد کردن شماره همراه الزامی می باشد.")

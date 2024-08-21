@@ -1,11 +1,19 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Input from "../../components/input/Input";
 import { schema } from "./schema";
+import { useDispatch, useSelector } from "react-redux";
+import { postContact } from "../../redux/slices/contactsSlice";
+import { toast } from "react-toastify";
 
 export default function ContactsAddPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const selectUsers = useSelector((state) => state.contacts.users);
+  console.log(selectUsers);
+
   const {
     handleSubmit,
     register,
@@ -13,7 +21,9 @@ export default function ContactsAddPage() {
   } = useForm({ resolver: yupResolver(schema) });
 
   function handleSubmitForm(value) {
-    console.log(value);
+    dispatch(postContact(value));
+    navigate("/contacts");
+    toast.success("مخاطب با موفقیت اضافه شد.");
   }
   return (
     <div className=" min-h-[calc(100vh-100px)] flex justify-center items-center font-yekan">
@@ -40,9 +50,9 @@ export default function ContactsAddPage() {
                 errors={errors}
               />
               <Input
-                name={"imgAddress"}
+                name={"imgSrc"}
                 placeholder={"آدرس تصویر"}
-                register={register("imgAddress")}
+                register={register("imgSrc")}
                 errors={errors}
               />
               <Input
@@ -65,7 +75,6 @@ export default function ContactsAddPage() {
                 register={register("job")}
                 errors={errors}
               />
-
               <div className="flex flex-col">
                 <select
                   name="relative"

@@ -30,7 +30,7 @@ export default function ContactsPage() {
             </Button>
           </div>
           <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-scroll max-h-[calc(100vh-190px)] gap-x-6 gap-y-4 py-7 px-4">
-            {contacts[0]?.map((item) => (
+            {contacts?.map((item) => (
               <Contact key={item.id} contact={item} />
             ))}
           </div>

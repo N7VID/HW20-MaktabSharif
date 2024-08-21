@@ -45,6 +45,21 @@ export const postContact = createAsyncThunk(
   }
 );
 
+export const putContact = createAsyncThunk(
+  "contacts/put",
+  async (data, { rejectWithValue }) => {
+    try {
+      const response = await httpRequest.put(
+        `${CONTACTS_URL}/${data.id}`,
+        data.value
+      );
+      return response.data;
+    } catch (error) {
+      rejectWithValue(error.data.message);
+    }
+  }
+);
+
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -55,7 +70,7 @@ const contactsSlice = createSlice({
       })
       .addCase(getContacts.fulfilled, (state, action) => {
         state.loading = false;
-        state.users.push(action.payload);
+        state.users = action.payload;
       })
       .addCase(getContacts.rejected, (state, action) => {
         state.loading = false;
@@ -76,7 +91,17 @@ const contactsSlice = createSlice({
       });
 
     builder.addCase(postContact.fulfilled, (state, action) => {
-      state.users[0].push(action.payload);
+      state.users.push(action.payload);
+    });
+
+    builder.addCase(putContact.fulfilled, (state, action) => {
+      const index = state.users.findIndex(
+        (user) => user.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.users[index] = action.payload;
+      }
+      state.user = action.payload;
     });
   },
 });

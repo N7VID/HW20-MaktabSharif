@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Contact from "../../components/Contact/Contact";
 import { getContacts } from "../../redux/slices/contactsSlice";
+import Modal from "../../components/Modal/Modal";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function ContactsPage() {
               </div>
             </Button>
           </div>
+          <Modal />
           <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-scroll max-h-[calc(100vh-190px)] gap-x-6 gap-y-4 py-7 px-4">
             {contacts?.map((item) => (
               <Contact key={item.id} contact={item} />

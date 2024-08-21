@@ -1,7 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { openModal } from "../../redux/slices/modalSlice";
 
 export default function Contact({ contact }) {
+  const dispatch = useDispatch();
+  function handleModal(data) {
+    dispatch(openModal(data));
+  }
   return (
     <div className="tablet:col-span-6 col-span-8 flex flex-col desktop:flex-row gap-3 items-center glassCard p-4 rounded-md cursor-default">
       <div>
@@ -54,6 +60,9 @@ export default function Contact({ contact }) {
           src="/bin.svg"
           alt="bin-icon"
           className="w-7 bg-white hover:bg-[#FFCCCB] transition duration-300 p-[5px] rounded-md cursor-pointer"
+          onClick={() =>
+            handleModal({ id: contact.id, name: contact.fullName })
+          }
         />
       </div>
     </div>

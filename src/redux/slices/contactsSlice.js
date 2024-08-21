@@ -60,6 +60,20 @@ export const putContact = createAsyncThunk(
   }
 );
 
+export const deleteContact = createAsyncThunk(
+  "contact/delete",
+  async (id, { rejectWithValue }) => {
+    try {
+      await httpRequest.delete(`${CONTACTS_URL}/${id}`);
+      return id;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || "An error occurred"
+      );
+    }
+  }
+);
+
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -102,6 +116,13 @@ const contactsSlice = createSlice({
         state.users[index] = action.payload;
       }
       state.user = action.payload;
+    });
+
+    builder.addCase(deleteContact.fulfilled, (state, action) => {
+      const filteredData = state.users.filter(
+        (user) => user.id !== action.payload
+      );
+      state.users = filteredData;
     });
   },
 });

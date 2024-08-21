@@ -3,11 +3,15 @@ export default function Button({ variant, children, ...props }) {
   switch (variant) {
     case "solid":
       variantClasses = "bg-[#FFCCCB]";
-
       break;
     case "outline":
       variantClasses = "border-4 border-[#FFCCCB] bg-white";
-
+      break;
+    case "secondary":
+      variantClasses = "bg-[#007BFF] text-white hover:bg-[#0056b3] transition";
+      break;
+    case "main":
+      variantClasses = "bg-[#546E7A] text-white hover:bg-[#37474F] transition";
       break;
 
     default:

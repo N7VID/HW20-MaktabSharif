@@ -6,7 +6,7 @@ export default function Header({ children }) {
   const user = useSelector(selectAuthUser);
   const dispatch = useDispatch();
   return (
-    <div className="bg-white w-full py-4 px-12 cursor-default flex justify-between items-center text-[#2C3E50]">
+    <div className="bg-white w-full py-4 px-12 cursor-default flex justify-between items-center text-[#2C3E50] font-yekan">
       <Link to={"/contacts"}>
         <div className="flex items-center gap-4">
           <img src="/users.svg" alt="users-icon" className="w-7" />

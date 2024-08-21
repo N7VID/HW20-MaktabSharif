@@ -1,12 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
-import Contact from "../../components/Contact/Contact";
-import Header from "../../components/Header/Header";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
+import Contact from "../../components/Contact/Contact";
 import { getContacts } from "../../redux/slices/contactsSlice";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
   const contacts = useSelector((state) => state.contacts.users);
+  const Navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getContacts());
@@ -14,12 +16,24 @@ export default function ContactsPage() {
 
   return (
     <div className="flex flex-col justify-center items-center font-yekan relative">
-      <Header />
       <div className="w-full min-h-[calc(100vh-60px)] bg-hero-homepage bg-cover bg-center">
-        <div className="grid grid-cols-12 mx-auto my-16 max-w-[1200px] overflow-y-scroll max-h-[calc(100vh-190px)] gap-x-6 gap-y-4 py-7 px-4">
-          {contacts[0]?.map((item) => (
-            <Contact key={item.id} contact={item} />
-          ))}
+        <div className="flex flex-col items-center">
+          <div className="w-60 mt-10 -mb-6">
+            <Button
+              variant={"secondary"}
+              onClick={() => Navigate("/contacts/add")}
+            >
+              <div className="flex gap-4 items-center justify-center">
+                ساخت مخاطب جدید{" "}
+                <img src="/add-user.svg" alt="add-user-icon" className="w-6" />
+              </div>
+            </Button>
+          </div>
+          <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-scroll max-h-[calc(100vh-190px)] gap-x-6 gap-y-4 py-7 px-4">
+            {contacts[0]?.map((item) => (
+              <Contact key={item.id} contact={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

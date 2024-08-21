@@ -11,8 +11,6 @@ import { toast } from "react-toastify";
 export default function ContactsAddPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const selectUsers = useSelector((state) => state.contacts.users);
-  console.log(selectUsers);
 
   const {
     handleSubmit,
@@ -110,7 +108,11 @@ export default function ContactsAddPage() {
                 </Button>
               </div>
               <div className="w-32">
-                <Button variant={"main"} onClick={handleCancelAdd}>
+                <Button
+                  variant={"main"}
+                  type={"button"}
+                  onClick={handleCancelAdd}
+                >
                   انصراف
                 </Button>
               </div>

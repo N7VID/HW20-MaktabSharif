@@ -25,6 +25,10 @@ export default function ContactsAddPage() {
     navigate("/contacts");
     toast.success("مخاطب با موفقیت اضافه شد.");
   }
+
+  function handleCancelAdd() {
+    navigate("/contacts");
+  }
   return (
     <div className=" min-h-[calc(100vh-100px)] flex justify-center items-center font-yekan">
       <div className="w-[1200px] h-[620px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
@@ -106,7 +110,9 @@ export default function ContactsAddPage() {
                 </Button>
               </div>
               <div className="w-32">
-                <Button variant={"main"}>انصراف</Button>
+                <Button variant={"main"} onClick={handleCancelAdd}>
+                  انصراف
+                </Button>
               </div>
             </div>
           </form>

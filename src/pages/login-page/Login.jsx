@@ -54,6 +54,7 @@ export default function Login() {
           />
           <Input
             placeholder={"رمز عبور"}
+            type={"password"}
             name={"password"}
             register={register("password")}
             errors={errors}

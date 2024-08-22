@@ -4,6 +4,7 @@ export default function Input({
   className,
   errors,
   register,
+  type = "text",
   ...props
 }) {
   return (
@@ -11,7 +12,7 @@ export default function Input({
       <input
         name={name}
         id={name}
-        type="text"
+        type={type}
         placeholder={placeholder}
         className={`rounded-md py-2 px-8 border ${
           errors[name] ? "border-red-500" : "border-[#2C3E50]"

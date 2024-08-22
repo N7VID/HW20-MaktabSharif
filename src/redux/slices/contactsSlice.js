@@ -72,6 +72,20 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
+export const searchContact = createAsyncThunk(
+  "contacts/search",
+  async (value, { rejectWithValue }) => {
+    try {
+      const response = await httpRequest.get(
+        `${CONTACTS_URL}?fullName_like=${value}`
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -121,6 +135,10 @@ const contactsSlice = createSlice({
         (user) => user.id !== action.payload
       );
       state.users = filteredData;
+    });
+
+    builder.addCase(searchContact.fulfilled, (state, action) => {
+      state.users = action.payload;
     });
   },
 });

@@ -40,7 +40,7 @@ export default function ContactsPage() {
                 <div className="flex gap-4 items-center justify-center">
                   ساخت مخاطب جدید{" "}
                   <img
-                    src="/add-user.svg"
+                    src="/add-user-outline-white.svg"
                     alt="add-user-icon"
                     className="w-6"
                   />

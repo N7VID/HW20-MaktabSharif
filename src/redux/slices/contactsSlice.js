@@ -16,7 +16,7 @@ export const getContacts = createAsyncThunk(
       const response = await httpRequest.get(`${CONTACTS_URL}`);
       return response.data;
     } catch (error) {
-      rejectWithValue(error.data.response);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -28,7 +28,7 @@ export const getSingleContact = createAsyncThunk(
       const response = await httpRequest.get(`${CONTACTS_URL}/${id}`);
       return response.data;
     } catch (error) {
-      rejectWithValue(error.data.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -40,7 +40,7 @@ export const postContact = createAsyncThunk(
       const response = await httpRequest.post(`${CONTACTS_URL}`, data);
       return response.data;
     } catch (error) {
-      rejectWithValue(error.data.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -55,7 +55,7 @@ export const putContact = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      rejectWithValue(error.data.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -67,9 +67,7 @@ export const deleteContact = createAsyncThunk(
       await httpRequest.delete(`${CONTACTS_URL}/${id}`);
       return id;
     } catch (error) {
-      return rejectWithValue(
-        error.response?.data?.message || "An error occurred"
-      );
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -128,4 +126,6 @@ const contactsSlice = createSlice({
 });
 
 export const selectUser = (state) => state.contacts.user;
+export const selectContactError = (state) => state.contacts.error;
+export const selectContactLoading = (state) => state.contacts.loading;
 export default contactsSlice.reducer;

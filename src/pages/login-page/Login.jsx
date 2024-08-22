@@ -4,12 +4,14 @@ import Input from "../../components/input/Input";
 import Button from "../../components/Button/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./schema";
-import { useDispatch } from "react-redux";
-import { login } from "../../redux/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectAuthError } from "../../redux/slices/authSlice";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const authError = useSelector(selectAuthError);
 
   const {
     register,
@@ -20,6 +22,7 @@ export default function Login() {
   const handleSubmitForm = (value) => {
     dispatch(login(value));
     navigate("/contacts");
+    toast.error(authError, { rtl: false });
   };
   return (
     <div className="flex justify-center items-center h-screen p-10 desktop:p-0 font-yekan">

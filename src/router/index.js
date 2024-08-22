@@ -9,20 +9,10 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import ContactsSinglePage from "../pages/contacts-single-page/ContactsSinglePage";
 import Header from "../components/Header/Header";
-import { Slide, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const ContactLayout = () => (
   <>
     <Header />
-    <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      rtl
-      draggable
-      theme={"light"}
-      transition={Slide}
-    />
     <Outlet />
   </>
 );

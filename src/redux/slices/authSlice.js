@@ -15,7 +15,7 @@ export const signUp = createAsyncThunk(
       const response = await httpRequest.post("/signup", userData);
       return response.data;
     } catch (error) {
-      rejectWithValue(error.response.data);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -27,7 +27,7 @@ export const login = createAsyncThunk(
       const response = await httpRequest.post("/login", credentials);
       return response.data;
     } catch (error) {
-      rejectWithValue(error.response.data);
+      return rejectWithValue(error.message);
     }
   }
 );

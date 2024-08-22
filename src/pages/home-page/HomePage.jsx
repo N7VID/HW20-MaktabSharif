@@ -4,8 +4,8 @@ import Button from "../../components/Button/Button";
 export default function HomePage() {
   const navigate = useNavigate();
   return (
-    <div className="flex justify-center items-center h-screen bg-hero-homepage bg-center bg-cover cursor-default font-yekan">
-      <div className="flex flex-col gap-14">
+    <div className="flex justify-center items-center h-screen bg-hero-main-2 bg-center bg-cover cursor-default font-yekan">
+      <div className="flex flex-col gap-10 -mt-56">
         <h1 className="flex justify-center items-center font-bold text-5xl text-[#2C3E50]">
           وب اپلیکیشن مدیریت مخاطبین
         </h1>
@@ -14,7 +14,7 @@ export default function HomePage() {
           <br />
           همه چیز در یک جا، همیشه در دسترس.
         </p>
-        <div className="flex gap-5 justify-around px-32">
+        <div className="flex gap-2 justify-around px-[180px] -mt-2">
           <Button variant={"outline"} onClick={() => navigate("signup")}>
             ثبت نام
           </Button>

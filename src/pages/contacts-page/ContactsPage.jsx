@@ -31,8 +31,8 @@ export default function ContactsPage() {
     <div className="flex flex-col justify-center items-center font-yekan relative">
       <div className="w-full min-h-[calc(100vh-60px)] bg-hero-homepage bg-cover bg-center">
         <div className="flex flex-col items-center">
-          <div className="mt-10 -mb-3 justify-between flex w-[700px]">
-            <div>
+          <div className="mt-10 -mb-3 justify-between flex desktop:w-[700px] gap-4 desktop:flex-row flex-col">
+            <div className="w-[245px]">
               <Button
                 variant={"secondary"}
                 onClick={() => Navigate("/contacts/add")}
@@ -63,7 +63,7 @@ export default function ContactsPage() {
             </div>
           </div>
           {modalStatus && <Modal />}
-          <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-scroll max-h-[calc(100vh-190px)] gap-x-6 gap-y-4 py-7 px-4">
+          <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-scroll gap-x-5 gap-y-4 py-6 px-10 max-h-[calc(100vh-190px)]">
             {contacts?.map((item) => (
               <Contact key={item.id} contact={item} />
             ))}

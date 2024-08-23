@@ -80,7 +80,6 @@ const authSlice = createSlice({
 export const selectAuthUser = (state) => state.auth.user;
 export const selectAuthLoading = (state) => state.auth.loading;
 export const selectAuthError = (state) => state.auth.error;
-export const selectAuthToken = (state) => state.auth.token;
 
 export default authSlice.reducer;
 export const { logout } = authSlice.actions;

@@ -78,27 +78,30 @@ export default function ContactsAddPage() {
                 register={register("job")}
                 errors={errors}
               />
-              <div className="flex flex-col">
-                <select
-                  name="relative"
-                  id="relative"
-                  {...register("relative")}
-                  className={`rounded-md w-[245px] py-[5px] px-8 border text-[#9ca1ac] ${
-                    errors["relative"] ? "border-red-500" : "border-[#2C3E50]"
-                  }`}
-                >
-                  <option value="">انتخاب نسبت</option>
-                  <option value="همکار">همکار</option>
-                  <option value="خانواده">خانواده</option>
-                  <option value="دوست">دوست</option>
-                  <option value="فامیل">فامیل</option>
-                  <option value="آشنا">آشنا</option>
-                </select>
-                {errors["relative"] && (
-                  <span className="text-red-500 text-[12px] font-semibold pt-[6px] cursor-default">
-                    {errors["relative"].message}
-                  </span>
-                )}
+              <div className="flex flex-col gap-1">
+                <label htmlFor="relative">نسبت</label>
+                <div className="flex flex-col">
+                  <select
+                    name="relative"
+                    id="relative"
+                    {...register("relative")}
+                    className={`rounded-md w-[245px] py-[5px] px-8 border ${
+                      errors["relative"] ? "border-red-500" : "border-[#2C3E50]"
+                    }`}
+                  >
+                    <option value="">انتخاب نسبت</option>
+                    <option value="همکار">همکار</option>
+                    <option value="خانواده">خانواده</option>
+                    <option value="دوست">دوست</option>
+                    <option value="فامیل">فامیل</option>
+                    <option value="آشنا">آشنا</option>
+                  </select>
+                  {errors["relative"] && (
+                    <span className="text-red-500 text-[12px] font-semibold pt-[6px] cursor-default">
+                      {errors["relative"].message}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
 

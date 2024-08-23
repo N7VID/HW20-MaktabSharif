@@ -56,7 +56,7 @@ export default function ContactsEditPage() {
 
   return (
     <div className=" min-h-[calc(100vh-100px)] flex justify-center items-center font-yekan">
-      <div className="w-[1200px] h-[620px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
+      <div className="w-[1100px] h-[540px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
         <Link to={AppRoutes.CONTACTS}>
           <img
             src="/back.svg"
@@ -64,12 +64,12 @@ export default function ContactsEditPage() {
             alt="back-icon"
           />
         </Link>
-        <div className="bg-white/90 rounded-xl w-[850px] h-[350px] flex flex-col justify-center items-center gap-8">
-          <h1 className="text-xl font-semibold">ویرایش مخاطب</h1>
+        <div className="bg-white/90 rounded-xl w-[850px] h-[400px] flex flex-col justify-center items-center gap-8 relative">
+          <h1 className="text-xl font-semibold mt-8 mb-2">ویرایش مخاطب</h1>
           <form
             action=""
             onSubmit={handleSubmit(handleSubmitForm)}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 flex-grow"
           >
             <div className="flex gap-4">
               <Input
@@ -131,7 +131,7 @@ export default function ContactsEditPage() {
               </div>
             </div>
 
-            <div className="flex justify-center items-center gap-2 mt-4">
+            <div className="flex justify-center items-center gap-2 mt-4 absolute bottom-8 left-[285px]">
               <div className="w-36">
                 <Button type={"submit"} variant={"secondary"}>
                   ویرایش مخاطب

@@ -30,7 +30,7 @@ export default function ContactsAddPage() {
   }
   return (
     <div className=" min-h-[calc(100vh-100px)] flex justify-center items-center font-yekan">
-      <div className="w-[1200px] h-[620px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
+      <div className="w-[1100px] h-[540px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
         <Link to={AppRoutes.CONTACTS}>
           <img
             src="/back.svg"
@@ -38,12 +38,12 @@ export default function ContactsAddPage() {
             alt="back-icon"
           />
         </Link>
-        <div className="bg-white/90 rounded-xl w-[850px] h-[350px] flex flex-col justify-center items-center gap-8">
-          <h1 className="text-xl font-semibold">ساخت مخاطب جدید</h1>
+        <div className="bg-white/90 rounded-xl w-[850px] h-[400px] flex flex-col justify-center items-center gap-8 relative">
+          <h1 className="text-xl mt-8 mb-2 font-semibold">ساخت مخاطب جدید</h1>
           <form
             action=""
             onSubmit={handleSubmit(handleSubmitForm)}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 flex-grow"
           >
             <div className="flex gap-4">
               <Input
@@ -105,7 +105,7 @@ export default function ContactsAddPage() {
               </div>
             </div>
 
-            <div className="flex justify-center items-center gap-2 mt-4">
+            <div className="flex justify-center items-center gap-2 absolute bottom-8 left-[295px]">
               <div className="w-32">
                 <Button type={"submit"} variant={"secondary"}>
                   ساخت مخاطب

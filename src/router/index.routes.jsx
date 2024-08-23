@@ -5,10 +5,11 @@ import ContactsPage from "../pages/contacts-page/ContactsPage";
 import HomePage from "../pages/home-page/HomePage";
 import Login from "../pages/login-page/Login";
 import SignUp from "../pages/signup-page/SignUp";
-import PrivateRoute from "./PrivateRoute/PrivateRoute.routes";
-import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.routes";
+import PrivateRoute from "./PrivateRoute.routes";
+import ProtectedRoute from "./ProtectedRoute.routes";
 import ContactsSinglePage from "../pages/contacts-single-page/ContactsSinglePage";
 import Header from "../components/Header/Header";
+import { AppRoutes } from "../config/routs";
 
 const ContactLayout = () => (
   <>
@@ -17,9 +18,9 @@ const ContactLayout = () => (
   </>
 );
 export const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
+  { path: AppRoutes.HOME, element: <HomePage /> },
   {
-    path: "/login",
+    path: AppRoutes.LOGIN,
     element: (
       <ProtectedRoute>
         <Login />
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/signup",
+    path: AppRoutes.SIGNUP,
     element: (
       <ProtectedRoute>
         <SignUp />
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/contacts",
+    path: AppRoutes.CONTACTS,
     element: <ContactLayout />,
     children: [
       {
@@ -47,7 +48,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: ":id",
+        path: AppRoutes.SINGLE,
         element: (
           <PrivateRoute>
             <ContactsSinglePage />
@@ -55,7 +56,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "edit/:id",
+        path: AppRoutes.EDIT,
         element: (
           <PrivateRoute>
             <ContactsEditPage />
@@ -63,7 +64,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "add",
+        path: AppRoutes.ADD,
         element: (
           <PrivateRoute>
             <ContactsAddPage />

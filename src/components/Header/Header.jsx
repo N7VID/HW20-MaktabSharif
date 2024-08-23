@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectAuthUser } from "../../redux/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../config/routs";
 
 export default function Header({ children }) {
   const user = useSelector(selectAuthUser);
@@ -8,7 +9,7 @@ export default function Header({ children }) {
   const navigate = useNavigate();
   return (
     <div className="bg-white w-full py-4 px-12 cursor-default flex justify-between items-center text-[#2C3E50] font-yekan">
-      <Link to={"/contacts"}>
+      <Link to={AppRoutes.CONTACTS}>
         <div className="flex items-center gap-4">
           <img src="/users.svg" alt="users-icon" className="w-7" />
           <h1 className="text-lg font-semibold">
@@ -26,7 +27,7 @@ export default function Header({ children }) {
           title="Log Out"
           onClick={() => {
             dispatch(logout());
-            navigate("/login");
+            navigate(AppRoutes.LOGIN);
           }}
         />
       </div>

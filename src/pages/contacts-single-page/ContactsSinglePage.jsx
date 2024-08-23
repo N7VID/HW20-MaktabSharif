@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getSingleContact, selectUser } from "../../redux/slices/contactsSlice";
+import { AppRoutes } from "../../config/routs";
 
 export default function ContactsSinglePage() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ export default function ContactsSinglePage() {
         <h1 className="text-xl font-bold">اطلاعات مخاطب</h1>
         <div className="w-[250px] desktop:w-[360px] tablet:w-[360px] relative">
           <img src={user?.imgSrc} alt="user-image" className="rounded-lg" />
-          <Link to={"/contacts"}>
+          <Link to={AppRoutes.CONTACTS}>
             <img
               src="/back.svg"
               className="w-7 desktop:w-9 tablet:w-9 absolute top-1 left-1"

@@ -7,6 +7,7 @@ import { schema } from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import { login, selectAuthError } from "../../redux/slices/authSlice";
 import { toast } from "react-toastify";
+import { AppRoutes } from "../../config/routs";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function Login() {
   const handleSubmitForm = (value) => {
     dispatch(login(value))
       .unwrap()
-      .then(() => navigate("/contacts"))
+      .then(() => navigate(AppRoutes.CONTACTS))
       .catch((error) => {
         toast.error(error.message || authError, { rtl: false });
       });
@@ -31,7 +32,7 @@ export default function Login() {
   return (
     <div className="flex justify-center items-center h-screen p-10 desktop:p-0 font-yekan">
       <div className="relative bg-cover bg-center bg-hero-signIn w-[1200px] h-[620px] rounded-xl">
-        <Link to={"/"}>
+        <Link to={AppRoutes.HOME}>
           <img
             src="/back.svg"
             className="w-10 absolute top-3 left-3"

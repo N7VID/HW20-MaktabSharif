@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./schema";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../redux/slices/authSlice";
+import { AppRoutes } from "../../config/routs";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -19,13 +20,13 @@ export default function SignUp() {
 
   const handleSubmitForm = (value) => {
     dispatch(signUp(value));
-    navigate("/contacts");
+    navigate(AppRoutes.CONTACTS);
   };
 
   return (
     <div className="flex justify-center items-center h-screen p-10 desktop:p-0 font-yekan">
       <div className="relative bg-cover bg-center bg-hero-signIn w-[1200px] h-[620px] rounded-xl">
-        <Link to={"/"}>
+        <Link to={AppRoutes.HOME}>
           <img
             src="/back.svg"
             className="w-10 absolute top-3 left-3"

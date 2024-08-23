@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import { AppRoutes } from "../../config/routs";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function HomePage() {
           <Button variant={"outline"} onClick={() => navigate("signup")}>
             ثبت نام
           </Button>
-          <Button variant={"solid"} onClick={() => navigate("/login")}>
+          <Button variant={"solid"} onClick={() => navigate(AppRoutes.LOGIN)}>
             ورود
           </Button>
         </div>

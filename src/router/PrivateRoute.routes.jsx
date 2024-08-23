@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { AppRoutes } from "../config/routs";
 
 export default function PrivateRoute({ children }) {
   // const [accessToken, setAccessToken] = useState();
@@ -12,6 +13,6 @@ export default function PrivateRoute({ children }) {
   return localStorage.getItem("accessToken") ? (
     children
   ) : (
-    <Navigate to={"/login"} />
+    <Navigate to={AppRoutes.LOGIN} />
   );
 }

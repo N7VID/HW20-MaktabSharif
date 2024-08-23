@@ -7,6 +7,7 @@ import { schema } from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import { postContact } from "../../redux/slices/contactsSlice";
 import { toast } from "react-toastify";
+import { AppRoutes } from "../../config/routs";
 
 export default function ContactsAddPage() {
   const dispatch = useDispatch();
@@ -20,17 +21,17 @@ export default function ContactsAddPage() {
 
   function handleSubmitForm(value) {
     dispatch(postContact(value));
-    navigate("/contacts");
+    navigate(AppRoutes.CONTACTS);
     toast.success("مخاطب با موفقیت اضافه شد.");
   }
 
   function handleCancelAdd() {
-    navigate("/contacts");
+    navigate(AppRoutes.CONTACTS);
   }
   return (
     <div className=" min-h-[calc(100vh-100px)] flex justify-center items-center font-yekan">
       <div className="w-[1200px] h-[620px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
-        <Link to={"/contacts"}>
+        <Link to={AppRoutes.CONTACTS}>
           <img
             src="/back.svg"
             className="w-10 absolute top-3 left-3"

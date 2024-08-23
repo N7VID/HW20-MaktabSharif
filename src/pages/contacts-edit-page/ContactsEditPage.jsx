@@ -13,6 +13,7 @@ import {
 } from "../../redux/slices/contactsSlice";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { AppRoutes } from "../../config/routs";
 
 export default function ContactsEditPage() {
   const dispatch = useDispatch();
@@ -43,20 +44,20 @@ export default function ContactsEditPage() {
       await dispatch(putContact({ value, id })).unwrap();
       dispatch(getContacts());
       toast.success("مخاطب با موفقیت ویرایش شد.");
-      navigate("/contacts");
+      navigate(AppRoutes.CONTACTS);
     } catch (error) {
       toast.error("ویرایش مخاطب با خطا مواجه شد.");
     }
   }
 
   function handleCancelEdit() {
-    navigate("/contacts");
+    navigate(AppRoutes.CONTACTS);
   }
 
   return (
     <div className=" min-h-[calc(100vh-100px)] flex justify-center items-center font-yekan">
       <div className="w-[1200px] h-[620px] bg-hero-signIn bg-cover bg-center rounded-xl relative flex justify-center items-center cursor-default">
-        <Link to={"/contacts"}>
+        <Link to={AppRoutes.CONTACTS}>
           <img
             src="/back.svg"
             className="w-10 absolute top-3 left-3"

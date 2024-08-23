@@ -5,6 +5,12 @@
       "password": "$2a$10$st9o7YFCaoXssIVamEt6TujVnrI0pTVBU6hmInk0JS6ALzc4fTGtm",
       "fullName": "نوید علی اکبری",
       "id": 1
+    },
+    {
+      "email": "poriaasrzad@gmail.com",
+      "password": "$2a$10$/lwq.5ZZq4d6.Yal.CGUSeeD7fll5yQMYz6IymGwFdJSPB.lP8wP.",
+      "fullName": "pouryaAsrzad",
+      "id": 2
     }
   ],
   "contacts": [

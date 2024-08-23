@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectAuthUser } from "../../redux/slices/authSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header({ children }) {
   const user = useSelector(selectAuthUser);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <div className="bg-white w-full py-4 px-12 cursor-default flex justify-between items-center text-[#2C3E50] font-yekan">
       <Link to={"/contacts"}>
@@ -23,7 +24,10 @@ export default function Header({ children }) {
           alt="logout-icon"
           className="w-7 cursor-pointer"
           title="Log Out"
-          onClick={() => dispatch(logout())}
+          onClick={() => {
+            dispatch(logout());
+            navigate("/login");
+          }}
         />
       </div>
     </div>

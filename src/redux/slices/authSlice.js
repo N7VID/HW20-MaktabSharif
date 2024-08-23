@@ -3,7 +3,6 @@ import httpRequest from "../../services/http-request";
 
 const initialState = {
   user: JSON.parse(localStorage.getItem("user")) || null,
-  token: localStorage.getItem("accessToken") || null,
   loading: false,
   error: null,
 };
@@ -38,7 +37,6 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.user = null;
-      state.token = null;
       state.error = null;
       localStorage.clear();
     },
@@ -53,7 +51,6 @@ const authSlice = createSlice({
         state.loading = false;
         state.error = null;
         state.user = action.payload.user;
-        state.token = action.payload.accessToken;
         localStorage.setItem("accessToken", action.payload.accessToken);
         localStorage.setItem("user", JSON.stringify(action.payload.user));
       })
@@ -70,7 +67,6 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload.user;
-        state.token = action.payload.accessToken;
         localStorage.setItem("accessToken", action.payload.accessToken);
         localStorage.setItem("user", JSON.stringify(action.payload.user));
       })

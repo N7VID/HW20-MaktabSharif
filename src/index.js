@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import store from "./redux/store";
-import { router } from "./router";
+import { router } from "./router/index.routes.jsx";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

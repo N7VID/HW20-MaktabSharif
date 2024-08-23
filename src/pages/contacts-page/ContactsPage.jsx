@@ -18,14 +18,18 @@ export default function ContactsPage() {
     dispatch(getContacts());
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   const handler = setTimeout(() => {
+  //     dispatch(searchContact(searchInput));
+  //   }, 1000);
+  //   return () => {
+  //     clearTimeout(handler);
+  //   };
+  // }, [searchInput, dispatch]);
+
   useEffect(() => {
-    const handler = setTimeout(() => {
-      dispatch(searchContact(searchInput));
-    }, 1000);
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [searchInput, dispatch]);
+    console.log("akbar");
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center font-yekan relative">
@@ -63,7 +67,7 @@ export default function ContactsPage() {
             </div>
           </div>
           {modalStatus && <Modal />}
-          <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-scroll gap-x-5 gap-y-4 py-6 px-10 max-h-[calc(100vh-190px)]">
+          <div className="grid grid-cols-12 mx-auto my-6 max-w-[1200px] overflow-y-auto gap-x-5 gap-y-4 py-6 px-10 max-h-[calc(100vh-190px)]">
             {contacts?.map((item) => (
               <Contact key={item.id} contact={item} />
             ))}

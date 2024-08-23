@@ -5,8 +5,8 @@ import ContactsPage from "../pages/contacts-page/ContactsPage";
 import HomePage from "../pages/home-page/HomePage";
 import Login from "../pages/login-page/Login";
 import SignUp from "../pages/signup-page/SignUp";
-import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
-import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.routes";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.routes";
 import ContactsSinglePage from "../pages/contacts-single-page/ContactsSinglePage";
 import Header from "../components/Header/Header";
 

@@ -20,10 +20,14 @@ export default function Login() {
   } = useForm({ resolver: yupResolver(schema) });
 
   const handleSubmitForm = (value) => {
-    dispatch(login(value));
-    navigate("/contacts");
-    toast.error(authError, { rtl: false });
+    dispatch(login(value))
+      .unwrap()
+      .then(() => navigate("/contacts"))
+      .catch((error) => {
+        toast.error(error.message || authError, { rtl: false });
+      });
   };
+
   return (
     <div className="flex justify-center items-center h-screen p-10 desktop:p-0 font-yekan">
       <div className="relative bg-cover bg-center bg-hero-signIn w-[1200px] h-[620px] rounded-xl">

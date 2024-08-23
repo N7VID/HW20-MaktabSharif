@@ -18,18 +18,14 @@ export default function ContactsPage() {
     dispatch(getContacts());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   const handler = setTimeout(() => {
-  //     dispatch(searchContact(searchInput));
-  //   }, 1000);
-  //   return () => {
-  //     clearTimeout(handler);
-  //   };
-  // }, [searchInput, dispatch]);
-
   useEffect(() => {
-    console.log("akbar");
-  }, []);
+    const handler = setTimeout(() => {
+      dispatch(searchContact(searchInput));
+    }, 1000);
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchInput, dispatch]);
 
   return (
     <div className="flex flex-col justify-center items-center font-yekan relative">

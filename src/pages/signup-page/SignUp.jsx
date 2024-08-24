@@ -1,12 +1,12 @@
-import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import Input from "../../components/input/Input";
-import Button from "../../components/Button/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./schema";
+import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { signUp } from "../../redux/slices/authSlice";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
+import Input from "../../components/input/Input";
 import { AppRoutes } from "../../config/routs";
+import { signUp } from "../../redux/slices/authSlice";
+import { schema } from "./schema";
 
 export default function SignUp() {
   const navigate = useNavigate();

@@ -1,9 +1,8 @@
-import { Link, useParams } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getSingleContact, selectUser } from "../../redux/slices/contactsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import { AppRoutes } from "../../config/routs";
+import { getSingleContact, selectUser } from "../../redux/slices/contactsSlice";
 
 export default function ContactsSinglePage() {
   const { id } = useParams();

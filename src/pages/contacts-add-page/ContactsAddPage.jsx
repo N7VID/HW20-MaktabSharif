@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Input from "../../components/input/Input";
 import { schema } from "./schema";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postContact } from "../../redux/slices/contactsSlice";
 import { toast } from "react-toastify";
 import { AppRoutes } from "../../config/routs";

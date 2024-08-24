@@ -6,7 +6,6 @@ import Input from "../../components/input/Input";
 import { schema } from "../contacts-add-page/schema/index";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getContacts,
   getSingleContact,
   putContact,
   selectUser,

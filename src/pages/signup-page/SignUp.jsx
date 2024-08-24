@@ -44,18 +44,21 @@ export default function SignUp() {
             <p className="font-semibold mb-10 text-center">ساخت حساب کاربری</p>
           </div>
           <Input
+            label={false}
             placeholder={"نام و نام خانوادگی"}
             name={"fullName"}
             register={register("fullName")}
             errors={errors}
           />
           <Input
+            label={false}
             placeholder={"ایمیل"}
             name={"email"}
             register={register("email")}
             errors={errors}
           />
           <Input
+            label={false}
             placeholder={"رمز عبور"}
             type={"password"}
             name={"password"}

@@ -4,12 +4,13 @@ export default function Input({
   className,
   errors,
   register,
+  label = true,
   type = "text",
   ...props
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={name}>{placeholder}</label>
+      {label && <label htmlFor={name}>{placeholder}</label>}
       <div className="flex flex-col">
         <input
           name={name}

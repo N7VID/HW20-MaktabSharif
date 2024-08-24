@@ -52,12 +52,14 @@ export default function Login() {
             </p>
           </div>
           <Input
+            label={false}
             placeholder={"ایمیل"}
             name={"email"}
             register={register("email")}
             errors={errors}
           />
           <Input
+            label={false}
             placeholder={"رمز عبور"}
             type={"password"}
             name={"password"}

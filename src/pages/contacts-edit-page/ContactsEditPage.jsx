@@ -39,12 +39,11 @@ export default function ContactsEditPage() {
   setValue("phoneNumber", user?.phoneNumber);
   setValue("relative", user?.relative);
 
-  async function handleSubmitForm(value) {
+  function handleSubmitForm(value) {
     try {
-      await dispatch(putContact({ value, id })).unwrap();
-      dispatch(getContacts());
-      toast.success("مخاطب با موفقیت ویرایش شد.");
+      dispatch(putContact({ value, id })).unwrap();
       navigate(AppRoutes.CONTACTS);
+      toast.success("مخاطب با موفقیت ویرایش شد.");
     } catch (error) {
       toast.error("ویرایش مخاطب با خطا مواجه شد.");
     }

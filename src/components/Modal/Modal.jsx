@@ -33,7 +33,7 @@ export default function Modal() {
           <h1 className="text-2xl font-bold py-6 -mt-5 text-red-600 border-b-2">
             حذف مخاطب
           </h1>
-          <p className="text-[18px] pb-7 mt-5">
+          <p className="desktop:text-lg tablet:text-lg text-base pb-7 mt-5">
             {`برای حذف  ${fullName} اطمینان داری؟`}
           </p>
           <div className="flex gap-2 justify-center px-20">

@@ -9,7 +9,7 @@ export default function Contact({ contact }) {
     dispatch(openModal(data));
   }
   return (
-    <div className="tablet:col-span-6 col-span-8 flex flex-col desktop:flex-row gap-3 items-center glassCard p-4 rounded-md cursor-default">
+    <div className="tablet:col-span-6 col-span-12 flex flex-col desktop:flex-row gap-3 items-center glassCard p-4 rounded-md cursor-default justify-center">
       <div>
         <img
           src={contact.imgSrc}
